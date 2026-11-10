@@ -11,8 +11,10 @@
             <Button Content="Filmek betöltése" Click="betoltes"/>
             <Button Content="Hány db" Click="hanyfilm"/>
             <Button Content="leghosszabb" Click="leghosszabb"/>
+            <Button Content="Átlagértékelés" Click="atlagert"/>
+
         </StackPanel>
         <DataGrid Name="datagrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="208,0,0,0"/>
-
+        
     </Grid>
 </Window>

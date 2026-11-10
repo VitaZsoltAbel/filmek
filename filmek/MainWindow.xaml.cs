@@ -17,14 +17,14 @@ namespace filmek
             Hossz = hossz;
             Ertekeles = ertekeles;
         }
-    } 
+    }
 
     public partial class MainWindow : Window
     {
         List<Filmadatok> filmek = new List<Filmadatok>();
         public MainWindow()
         {
-            InitializeComponent(); 
+            InitializeComponent();
 
             filmek = new List<Filmadatok>()
             {
@@ -51,6 +51,12 @@ namespace filmek
         {
             var leghosszabbFilm = filmek.OrderByDescending(f => f.Hossz).FirstOrDefault();
             MessageBox.Show($"A leghosszabb film: {leghosszabbFilm.Cim}, Hossz: {leghosszabbFilm.Hossz} perc.");
+        }
+
+        private void atlagert(object sender, RoutedEventArgs e)
+        {
+            double atlag = filmek.Average(f => f.Ertekeles);
+            MessageBox.Show($"A filmek átlagos értékelése: {atlag}");
         }
     }
 }
