@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace filmek
 {
@@ -20,11 +21,12 @@ namespace filmek
 
     public partial class MainWindow : Window
     {
+        List<Filmadatok> filmek = new List<Filmadatok>();
         public MainWindow()
         {
             InitializeComponent(); 
 
-            List<Filmadatok> filmek = new List<Filmadatok>()
+            filmek = new List<Filmadatok>()
             {
                 new Filmadatok("Csillagok háborúja", "sci-fi", 121, 8.6),
                 new Filmadatok("Titanic", "dráma", 195, 7.8),
@@ -32,6 +34,12 @@ namespace filmek
                 new Filmadatok("Mátrix", "sci-fi", 136, 8.7),
                 new Filmadatok("Shrek", "animáció", 90, 7.9)
             };
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            datagrid.ItemsSource = filmek;
+            datagrid.Items.Refresh();
         }
     }
 }
