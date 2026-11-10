@@ -46,5 +46,11 @@ namespace filmek
         {
             MessageBox.Show($"A listában {filmek.Count} film található.");
         }
+
+        private void leghosszabb(object sender, RoutedEventArgs e)
+        {
+            var leghosszabbFilm = filmek.OrderByDescending(f => f.Hossz).FirstOrDefault();
+            MessageBox.Show($"A leghosszabb film: {leghosszabbFilm.Cim}, Hossz: {leghosszabbFilm.Hossz} perc.");
+        }
     }
 }

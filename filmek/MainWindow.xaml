@@ -8,8 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <StackPanel Margin="0,0,597,0">
-            <Button Content="Filmek betöltése" Click="Button_Click"/>
-            <Button Content="Button" Click="Button_Click_1"/>
+            <Button Content="Filmek betöltése" Click="betoltes"/>
+            <Button Content="Hány db" Click="hanyfilm"/>
+            <Button Content="leghosszabb" Click="leghosszabb"/>
         </StackPanel>
         <DataGrid Name="datagrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="208,0,0,0"/>
 
