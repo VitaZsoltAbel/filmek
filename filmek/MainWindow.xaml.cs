@@ -36,10 +36,15 @@ namespace filmek
             };
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void betoltes(object sender, RoutedEventArgs e)
         {
             datagrid.ItemsSource = filmek;
             datagrid.Items.Refresh();
+        }
+
+        private void hanyfilm(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"A listában {filmek.Count} film található.");
         }
     }
 }
