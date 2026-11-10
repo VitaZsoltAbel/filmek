@@ -15,6 +15,7 @@
             <Button Content="Csak sci-fi" Click="csakscifi"/>
             <Button Content="Csak cím" Click="csakcim"/>
             <Button Content="cím szerint rendezve" Click="cimrend"/>
+            <ProgressBar Name="progbar" Height="23" Width="100" ValueChanged="ProgressBar_ValueChanged"/>
 
         </StackPanel>
         <DataGrid Name="datagrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="208,0,0,0"/>

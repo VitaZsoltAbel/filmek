@@ -61,7 +61,10 @@ namespace filmek
 
         private void csakscifi(object sender, RoutedEventArgs e)
         {
-            List<Filmadatok>
+            var scifiLista = filmek.Where(f => f.Mufaj == "sci-fi").ToList();
+
+            datagrid.ItemsSource = scifiLista;
+            datagrid.Items.Refresh();
         }
 
         private void csakcim(object sender, RoutedEventArgs e)
@@ -73,6 +76,17 @@ namespace filmek
         private void cimrend(object sender, RoutedEventArgs e)
         {
             datagrid.ItemsSource = filmek.OrderBy(f => f.Cim).ToList();
+        }
+
+        private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            progbar.Maximum = filmek.Max(f => f.Hossz);
+            progbar.Minimum = 0;
+            if (datagrid.SelectedItem != null)
+            {
+                progbar.Value = ((Filmadatok)datagrid.SelectedItem).Hossz;
+            }
+
         }
     }
 }
