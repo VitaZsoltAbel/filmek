@@ -58,5 +58,21 @@ namespace filmek
             double atlag = filmek.Average(f => f.Ertekeles);
             MessageBox.Show($"A filmek átlagos értékelése: {atlag}");
         }
+
+        private void csakscifi(object sender, RoutedEventArgs e)
+        {
+            List<Filmadatok>
+        }
+
+        private void csakcim(object sender, RoutedEventArgs e)
+        {
+            datagrid.ItemsSource = filmek.Select(t => new { Cim = t.Cim }).ToList();
+            datagrid.Items.Refresh();
+        }
+
+        private void cimrend(object sender, RoutedEventArgs e)
+        {
+            datagrid.ItemsSource = filmek.OrderBy(f => f.Cim).ToList();
+        }
     }
 }
